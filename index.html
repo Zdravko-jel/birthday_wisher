@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Честит рожден ден, Ирена! 💖</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffd6e7, #f5d0fe, #ddd6fe);
+      overflow-x: hidden;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 30px;
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: #e64980;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #7b2cbf;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+
+    .gift-button {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .gift-button:hover {
+      transform: scale(1.08) rotate(4deg);
+    }
+
+    .gift-emoji {
+      font-size: 140px;
+    }
+
+    .open-text {
+      position: absolute;
+      bottom: -20px;
+      background: #e64980;
+      color: white;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .surprise {
+      animation: fadeIn 0.7s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .card {
+      padding: 25px;
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .pink {
+      background: linear-gradient(135deg, #ffe3ec, #ffd6e7);
+    }
+
+    .purple {
+      background: linear-gradient(135deg, #efe1ff, #ddd6fe);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      background: #7b2cbf;
+      color: white;
+      padding: 14px 22px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #5a189a;
+      transform: scale(1.05);
+    }
+
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #777;
+    }
+
+    .floating {
+      position: fixed;
+      font-size: 40px;
+      opacity: 0.25;
+      animation: float 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .balloon1 {
+      top: 40px;
+      left: 40px;
+    }
+
+    .balloon2 {
+      top: 60px;
+      right: 60px;
+    }
+
+    .balloon3 {
+      bottom: 80px;
+      left: 80px;
+    }
+
+    .balloon4 {
+      bottom: 60px;
+      right: 60px;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 2.8rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .gift-emoji {
+        font-size: 110px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="floating balloon1">🎈</div>
+  <div class="floating balloon2">🎂</div>
+  <div class="floating balloon3">🎁</div>
+  <div class="floating balloon4">✨</div>
+
+  <div class="container">
+
+    <div id="introSection">
+      <h1>Честит рожден ден!</h1>
+      <h2>Рени 💖</h2>
+
+      <p class="intro">
+        Днес е само за теб! Подготвили сме ти нещо специално, което се надяваме да ти донесе усмивка!
+      </p>
+
+      <div class="gift-button" onclick="openGift()">
+        <div class="gift-emoji">🎁</div>
+        <div class="open-text">Отвори своя подарък</div>
+      </div>
+    </div>
+
+    <div id="surpriseSection" class="hidden surprise">
+      <h1>🎉 Изненада! 🎉</h1>
+
+      <p class="intro">
+        Ти заслужаваш всичкото щастие, смях, успех и любов в света!
+        Благодарим ти, че си такъв уникален човек!
+      </p>
+
+      <div class="cards">
+
+        <div class="card pink">
+          <h3>Нещо от сърце 💌</h3>
+
+          <p>
+            Скъпа Рени,<br><br>
+
+            Честит рожден ден! Надяваме се тази година да ти донесе незабравими спомени,
+            вълнуващи приключения и безкрайно количество причини да се усмихваш.<br><br>
+
+            Благодарим ти, че си винаги до нас, за твоята доброта, подкрепата и всички моменти,
+            които сме споделили заедно.<br><br>
+
+            Късметлии сме, че те имаме в живота си.<br><br>
+
+            Обичаме те ❤️
+          </p>
+        </div>
+
+        <div class="card purple">
+          <h3>Твоят подарък 🎀</h3>
+
+          <p>
+            Всеки фен на музиката заслужава да види любимите си изпълнители на живо!
+            <br><br>
+            Затова ти подаряваме билети за <strong>Белият концерт на Папи Ханс</strong> в Бургас, 04.07.2026 - 22:00 ч.! 🎸
+            Тематиката е бяло, затова не забравяй да си подготвиш най-стилния бял тоалет! 😉
+          </p>
+
+          <a class="btn" href="present.pdf" download>
+            Изтегли билетите ✨
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer">
+        С любов, Здравко и Мария 💕
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function openGift() {
+      document.getElementById('introSection').classList.add('hidden');
+      document.getElementById('surpriseSection').classList.remove('hidden');
+
+      launchConfetti();
+    }
+
+    function launchConfetti() {
+      const emojis = ['🎉', '✨', '💖', '🎊'];
+
+      const duration = 4000;
+      const end = Date.now() + duration;
+
+      const interval = setInterval(() => {
+        for (let i = 0; i < 6; i++) {
+          const confetti = document.createElement('div');
+
+          confetti.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+          confetti.style.position = 'fixed';
+          confetti.style.left = Math.random() * 100 + 'vw';
+          confetti.style.top = '-20px';
+          confetti.style.fontSize = (Math.random() * 20 + 20) + 'px';
+          confetti.style.zIndex = '9999';
+          confetti.style.pointerEvents = 'none';
+          confetti.style.transition = 'transform 4s linear, opacity 4s ease-out';
+
+          document.body.appendChild(confetti);
+
+          requestAnimationFrame(() => {
+            confetti.style.transform = `translateY(${window.innerHeight + 100}px) rotate(${Math.random() * 720}deg)`;
+            confetti.style.opacity = '0';
+          });
+
+          setTimeout(() => {
+            confetti.remove();
+          }, 4000);
+        }
+
+        if (Date.now() > end) {
+          clearInterval(interval);
+        }
+      }, 250);
+    }
+  </script>
+
+</body>
+</html>
